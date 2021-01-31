@@ -1,0 +1,20 @@
+name: deploy-py-lambda
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Zip dist folder contents
+      run: pwd && ls && zip bundle.zip *
+    - name: Deploy code to Lambda
+      uses: vetpartner/lambdatest@v1.0
+      with:
+        function_name: 'Mytestfunction'
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_region: 'ap-southeast-2'
+        zip_file: bundle.zip
