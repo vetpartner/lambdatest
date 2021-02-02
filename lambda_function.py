@@ -32,7 +32,7 @@ def put_bucket_lifecycle_configuration(bucket_name, lifecycle_config):
 
 def lambda_handler(event, context):
     # TODO implement
-    print('This is event: {}'.format(event))
+    print('Event: {}'.format(event))
     print('This is the bucket name: {}'.format(event.get('detail').get('requestParameters').get('bucketName')))
     
     bucket_name = (event.get('detail').get('requestParameters').get('bucketName'))
