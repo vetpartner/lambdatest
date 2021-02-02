@@ -11,6 +11,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: checkdirectory
+      run: pwd && ls 
+
     - name: cfn-lint
       uses: vetpartner/lambdatest@master 
       with:
