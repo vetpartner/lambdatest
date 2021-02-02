@@ -31,7 +31,7 @@ jobs:
     - name: Zip dist folder contents
       run: pwd && ls && zip bundle.zip lambda_function.py
     - name: Deploy code to Lambda
-      uses: vetpartner/lambdatest@master
+      uses: ./
       with:
         function_name: 'Mytestfunction'
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
