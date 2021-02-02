@@ -11,7 +11,7 @@ jobs:
     - name: Zip dist folder contents
       run: pwd && ls && zip bundle.zip *
     - name: Deploy code to Lambda
-      uses: alpine-docker/cfn-linter@v1.0
+      uses: alpine-docker/cfn-linter@eddiez0719-patch-1
       with:
         function_name: 'Mytestfunction'
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
