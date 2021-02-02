@@ -1,6 +1,8 @@
 name: Lint CloudFormation Templates
 
-on: [push]
+on: 
+  push:
+    branches: [vetpartner-patch-6]
 
 jobs:
   cloudformation-linter:
