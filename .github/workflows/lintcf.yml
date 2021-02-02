@@ -12,7 +12,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: cfn-lint
-      run: ls
       uses: vetpartner/lambdatest@master 
       with:
         args: "**/*.yaml"
