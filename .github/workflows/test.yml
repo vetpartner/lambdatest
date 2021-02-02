@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Zip dist folder contents
-      run: pwd && ls && zip bundle.zip *
+      run: pwd && ls && zip bundle.zip lambda_function.py
     - name: Deploy code to Lambda
       uses: vetpartner/lambdatest@v1.1
       with:
